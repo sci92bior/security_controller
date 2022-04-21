@@ -11,6 +11,10 @@ springBoot {
 }
 
 dependencies {
+    implementation(project(":modules:flow_collector"))
+
+    implementation("com.h2database:h2:2.1.212")
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign:3.0.3")
     implementation(Dependency.springBootStarter)
     implementation(Dependency.springBootStarterDataJpa)
     implementation(Dependency.springBootStarterDataAop)

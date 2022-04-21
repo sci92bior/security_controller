@@ -58,7 +58,7 @@ object Dependency {
 
     const val keycloak = "org.keycloak:keycloak-spring-boot-starter:${Versions.keycloak}"
     const val keycloakAdapter = "org.keycloak.bom:keycloak-adapter-bom:${Versions.keycloak}"
-    const val keycloakAdminClient = "org.keycloak:keycloak-admin-client:${Versions.keycloak}"
+    const val keycloakAdminClient = "org.keycloak:keycloak-admin-pl.edu.wat.softanet.client:${Versions.keycloak}"
     const val keycloakMock =
         "com.c4-soft.springaddons:spring-security-oauth2-test-webmvc-addons:${Versions.keycloakMock}"
 
