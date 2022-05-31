@@ -8,7 +8,7 @@ import pl.edu.wat.softanet.dto.Devices
 
 @Component
 @FeignClient(name = "onosClient", configuration = [OnosFeignClientConfiguration::class],url = "http://localhost:8181/onos/v1/")
-interface OnosClient {
+interface RyuClient {
 
     @GetMapping("/devices")
     fun getDevices() : Devices
