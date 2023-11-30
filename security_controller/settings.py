@@ -129,7 +129,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -142,5 +141,5 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-NETWORK_CONTROLLER_URL = "http://192.168.100.64:8080"
-MAIN_RESIDENT_URL = "http://main-resident:8000"
+NETWORK_CONTROLLER_URL = os.environ.get("NETWORK_CONTROLLER_URL", "http://network-controller:8000")
+MAIN_RESIDENT_URL = os.environ.get("MAIN_RESIDENT_URL", "http://main-resident:8000")
