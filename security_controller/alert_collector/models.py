@@ -3,7 +3,7 @@ from django.db import models
 
 class Alert(models.Model):
     alert_type = models.CharField(max_length=50)
-    device_id = models.CharField(max_length=50)
+    device_ip = models.CharField(max_length=50)
     port = models.CharField(max_length=50)
     src_ip = models.CharField(max_length=50)
     dst_ip = models.CharField(max_length=50)

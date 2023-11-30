@@ -18,11 +18,15 @@ logger = logging.getLogger(__name__)
 @api_view(['POST'])
 def add_alert(request):
     if request.method == 'POST':
+        logger.warning("Alert received")
         serializer = AlertSerializer(data=request.data)
         if serializer.is_valid():
             alert = serializer.save()
+            logger.warning("Checking if alert is associated with VIP service")
             if alert.is_associated_with_vip_service():
                 # send alert to main resident with post request on 127.0.0.1:10000/alerts/
+                logger.warning(f"Alert associated with VIP service. Sending alert to main resident. Detected attack "
+                               f"type: {alert.alert_type} src ip: {alert.src_ip} dst ip: {alert.dst_ip}")
                 headers = {
                     'accept': 'application/json',
                     'Content-Type': 'application/json',
