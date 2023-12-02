@@ -18,8 +18,8 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
 
+    runserver.default_port = settings.RUN_SERVER_PORT
     execute_from_command_line(sys.argv)
-
 
 if __name__ == '__main__':
     main()

@@ -22,6 +22,7 @@ def add_alert(request):
         serializer = AlertSerializer(data=request.data)
         if serializer.is_valid():
             alert = serializer.save()
+            # check if same alert already exists
             logger.warning("Checking if alert is associated with VIP service")
             if alert.is_associated_with_vip_service():
                 # send alert to main resident with post request on 127.0.0.1:10000/alerts/
@@ -38,3 +39,4 @@ def add_alert(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
     else:
         return Response("Invalid request method")
+
