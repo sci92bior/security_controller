@@ -48,10 +48,6 @@ class PolicyRecord(TimestampedModel):
 
 
 
-
-
-
-
     def clean(self):
         # Check for collisions with other records
         collisions = self.detect_collisions_with_other_records()

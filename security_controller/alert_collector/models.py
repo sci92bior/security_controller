@@ -19,6 +19,15 @@ class Alert(models.Model):
                 return True
         return False
 
+    def is_duplicate(self):
+        # additional check if same alert was received in last 30 seconds
+        alerts = Alert.objects.all()
+        for alert in alerts:
+            if alert.alert_type == self.alert_type and alert.device_ip == self.device_ip and alert.port == self.port and alert.src_ip == self.src_ip and alert.dst_ip == self.dst_ip and alert.id != self.id:
+                if (self.alert_time - alert.alert_time).seconds < 300:
+                    return True
+        return False
+
 
 class VIPService(models.Model):
     name = models.CharField(max_length=50)
