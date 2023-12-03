@@ -141,5 +141,5 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10
 }
 
-NETWORK_CONTROLLER_URL = os.environ.get("NETWORK_CONTROLLER_URL", "http://network-controller:8000")
-MAIN_RESIDENT_URL = os.environ.get("MAIN_RESIDENT_URL", "http://main-resident:8000")
+NETWORK_CONTROLLER_URL = os.environ.get("NETWORK_CONTROLLER_URL", "http://192.168.100.:8000")
+MAIN_RESIDENT_URL = os.environ.get("MAIN_RESIDENT_URL", "http://127.0.0.1:10000")
